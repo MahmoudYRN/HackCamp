@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Audemic - <?php echo $view->pageTitle; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body><br>
+<div class="container"><br>
+    <div class="viewer">
+        <?php
+            $id = $_GET['id'];
+            echo $id;
+        ?>
+        <iframe src="/uploads/<?php echo $id?>" width="100%" height="500px"></iframe>
+    </div>
+    <div class="listen-footer"><br>
+        <div class="upload-btn">
+            <a href="home.php""><img src="images/home.png" id="upload-image">
+            <p1>HOME</p1>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

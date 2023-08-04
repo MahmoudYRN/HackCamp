@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Audemic - <?php echo $view->pageTitle; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body><br>
+
+<div class="container">
+<div class="login-form">
+    <img src="images/Banner.png" class = "Login-banner">
+    <form action="register.php" method="post" class="form text-primary">
+        <input type="text" name="username" placeholder="Username" id="user-input" required> <br>
+        <input type="text" name="name" placeholder="Name" id="user-input" required><br>
+        <input type="text" name="email" placeholder="Email" id="user-input" required> <br>
+        <input type="password" name="password" placeholder="Password" id="user-input"required><br>
+        <input type="submit" name="registerbutton" value="Register" id="register-btn">
+    </form><br>
+    <a href="index.php" id="back2-login">Back to login</a>
+</div>
+</div>
+</body>
+</html>

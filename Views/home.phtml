@@ -1,0 +1,75 @@
+<?php
+require_once("Models/papersData.php");
+require_once("Models/papersDataSet.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Audemic - <?php echo $view->pageTitle; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body><br>
+<div class="container">
+    <div class="user">
+        <?php
+        foreach ($userPhotos as $userData){
+        }
+        if (isset($_SESSION["login"])) {
+            echo '
+        <div>
+            <img src="images/Banner.png" class="banner">
+        </div>
+        <div>
+            <img src="images/mahmoud.png" class="user-photo">        
+        <div class="user-name">            
+                <p1>'.ucfirst($_SESSION["login"]);'</p1>
+            ';
+                echo '
+            <form method="post" action="" class="form text-primary">
+                <input type="submit" name="logoutbutton" value="Logout">
+            </form>';
+        }?>
+    </div><br>
+
+    <div id="paper-header"><p1>Your daily research</p1></div>
+    <div class="side-bar">
+        <?php
+            foreach ($result as $papersData)
+            {
+                echo '<a href="preview.php?id='.$papersData->getPaperName().'"><div id="pre-paper"><br>'.'<div>'.$papersData->getPaperName().'</div></div></a>';
+            }
+        ?>
+    </div>
+    <div id="paper-header">
+        <p1>Your uploaded papers</p1>
+    </div>
+    <div class="your-papers">
+        <?php
+        foreach ($result1 as $papersData)
+        {
+            echo '        
+                <div class="paper-section">
+                    <a href="preview.php?id='.$papersData->getPaperName().'"><div class="thumbnail"><br>
+                        '. $papersData->getPaperName().'
+                    </div></a>
+                    <div class="yourpaper-info">
+                        <p1>This paper info</p1>
+                     </div>
+                </div>';
+        }
+        ?>
+
+    </div>
+    <div class="footer"><br>
+        <div class="upload-btn">
+            <a href="upload.php""><img src="images/upload.png" id="upload-image">
+            <p1>Upload</p1>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

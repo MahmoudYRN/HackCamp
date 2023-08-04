@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Audemic - <?php echo $view->pageTitle; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body><br>
+<div class="container">
+    <div class="user">
+        <?php
+        if (isset($_SESSION["login"])) {
+            echo '
+        <div>
+            <img src="images/Banner.png" class="banner">
+        </div>
+        <div>
+            <img src="images/mahmoud.png" class="user-photo">        
+        <div class="user-name">            
+                <p1>'.ucfirst($_SESSION["login"]);'</p1>
+            ';
+            echo '
+            <form method="post" action="" class="form text-primary">
+                <input type="submit" name="logoutbutton" value="Logout">
+            </form>';
+        }?>
+    </div>
+    <br>
+    <div class="upload-form">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <img src="/images/upload1.png" id="upload-border">
+            <label for="pdfFile"><div id="file-btn">Chose file</div></label>
+            <input type="file" name="pdfFile" id="pdfFile">
+            <input type="submit" value="Upload" name="submit" id="file-submit">
+        </form>
+    </div>
+    <div class="footer"><br>
+        <div class="upload-btn">
+            <a href="home.php""><img src="images/home.png" id="upload-image">
+            <p1>HOME</p1>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

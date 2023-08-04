@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <title>Audemic - <?php echo $view->pageTitle; ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body><br>
+<div class="container">
+
+<div class="login-form">
+<?php
+if (!isset($_SESSION["login"])) {
+
+    echo '                 
+                <img src="images/Banner.png" class = "Login-banner">
+            <form method="post" action="" class="form text-primary">                
+                <input type="text" name="username" placeholder="Username" id="user-input" required> <br>
+                <input type="password" name="password" placeholder="Password" id="user-input" required><br>
+                <input type="submit" name="loginbutton" value="Sign in" id="sign-in-btn">
+                <a href="register.php"><input type="button" value="Sign up" id="sign-in-btn"></a>
+            </form>';
+}
+
+?>
+
+    </div>
+</div>
+
+</div>
+</body>
+</html>
